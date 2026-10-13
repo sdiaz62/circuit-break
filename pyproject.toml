@@ -1,6 +1,6 @@
 [project]
 name = "circuit-break"
-version = "0.1.0"
+version = "0.1.1"
 description = "A circuit breaker with half-open probing."
 requires-python = ">=3.10"
 dependencies = []
