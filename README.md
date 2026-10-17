@@ -56,3 +56,10 @@ structure the probe so it does not.
 
 `CircuitBreaker` takes a `clock` callable defaulting to `time.monotonic`. Pass an integer
 counter in tests so transitions are exact and never depend on wall-clock drift.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
